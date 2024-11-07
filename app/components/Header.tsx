@@ -13,3 +13,5 @@ const Header: React.FC = () => (
     </nav>
   </header>
 );
+
+export default Header;
