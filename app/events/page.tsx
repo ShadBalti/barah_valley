@@ -26,9 +26,11 @@ const events: Event[] = [
 
 const EventsPage: React.FC = () => {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Upcoming Events</h1>
-      <EventList events={events} />
+    <div className="py-10 px-4 bg-white">
+      <h1 className="text-3xl font-semibold text-center text-gray-800 mb-8">Upcoming Events</h1>
+      <div className="space-y-8">
+        <EventList events={events} />
+      </div>
     </div>
   );
 };

@@ -26,11 +26,13 @@ const businesses: Business[] = [
 
 const DirectoryPage: React.FC = () => {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Local Businesses</h1>
-      {businesses.map((business) => (
-        <BusinessCard key={business.id} business={business} />
-      ))}
+    <div className="py-10 px-4 bg-gray-50">
+          <h1 className="text-3xl font-semibold text-center text-gray-800 mb-8">Local Businesses</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {businesses.map((business) => (
+              <BusinessCard key={business.id} business={business} />
+            ))}
+          </div>
     </div>
   );
 };
