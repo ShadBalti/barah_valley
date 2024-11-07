@@ -1,30 +1,40 @@
-// app/tourism/page.js
 'use client';
+import Image from 'next/image';
+import React from 'react';
 
-import React, { useEffect, useState } from 'react';
-
-async function fetchTouristSpots() {
-  const res = await fetch('https://api.example.com/tourist-spots'); // Replace with your API endpoint
-  return res.json();
-}
+const touristSpots = [
+  {
+    id: 1,
+    name: 'Mountain Viewpoint',
+    description: 'A breathtaking viewpoint offering panoramic views of Barah Valley.',
+    imageUrl: '/public/images/valley1.jpeg', // Use a local image or link to an external image
+  },
+  {
+    id: 2,
+    name: 'Ancient Shrine',
+    description: 'A historic shrine that reflects the valley’s deep-rooted cultural heritage.',
+    imageUrl: '/public/images/valley2.jpeg',
+  },
+  {
+    id: 3,
+    name: 'River Trail',
+    description: 'A scenic trail along the river, perfect for hikes and nature walks.',
+    imageUrl: '/public/images/valley3.jpeg',
+  },
+  // Add more tourist spots as needed
+];
 
 export default function TourismPage() {
-  const [spots, setSpots] = useState([]);
-
-  useEffect(() => {
-    fetchTouristSpots().then((data) => setSpots(data));
-  }, []);
-
   return (
     <div style={{ padding: '20px' }}>
       <h1>Explore Barah Valley</h1>
       <p>Discover the must-visit attractions in Barah Valley.</p>
-      <ul>
-        {spots.map((spot) => (
-          <li key={spot.id}>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {touristSpots.map((spot) => (
+          <li key={spot.id} style={{ marginBottom: '20px' }}>
             <h2>{spot.name}</h2>
             <p>{spot.description}</p>
-            <Image src={spot.imageUrl} alt={spot.name} width={400} height={250} />
+            <Image src={spot.imageUrl} alt={spot.name} width={400} height={250} style={{ borderRadius: '8px' }} />
           </li>
         ))}
       </ul>
