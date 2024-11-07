@@ -1,12 +1,22 @@
-// components/Gallery.js
+import React from 'react';
 import Image from 'next/image';
 
-export default function Gallery({ images }) {
-  return (
-    <div style={{ display: 'grid', gap: '10px', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', padding: '20px' }}>
-      {images.map((image, index) => (
-        <Image key={index} src={image.src} alt={image.alt} width={200} height={150} style={{ borderRadius: '5px' }} />
-      ))}
-    </div>
-  );
-}
+type GalleryImage = {
+  id: number;
+  src: string;
+  alt: string;
+};
+
+type GalleryProps = {
+  images: GalleryImage[];
+};
+
+const Gallery: React.FC<GalleryProps> = ({ images }) => (
+  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+    {images.map((image) => (
+      <Image key={image.id} src={image.src} alt={image.alt} width={200} height={150} style={{ borderRadius: '8px' }} />
+    ))}
+  </div>
+);
+
+export default Gallery;

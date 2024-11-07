@@ -2,7 +2,14 @@
 import Image from 'next/image';
 import React from 'react';
 
-const touristSpots = [
+type TouristSpot = {
+  id: number;
+  name: string;
+  description: string;
+  imageUrl: string;
+};
+
+const touristSpots: TouristSpot[] = [
   {
     id: 1,
     name: 'Mountain Viewpoint',
@@ -24,7 +31,7 @@ const touristSpots = [
   // Add more tourist spots as needed
 ];
 
-export default function TourismPage() {
+const TourismPage: React.FC = () => {
   return (
     <div style={{ padding: '20px' }}>
       <h1>Explore Barah Valley</h1>
@@ -40,4 +47,6 @@ export default function TourismPage() {
       </ul>
     </div>
   );
-}
+};
+
+export default TourismPage;
