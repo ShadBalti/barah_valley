@@ -1,5 +1,5 @@
 // app/directory/page.js
-import BusinessCard from '../../components/BusinessCard';
+import BusinessCard from '../components/BusinessCard';
 
 const businesses = [
   { name: 'Hotel Mountain View', description: 'Comfortable lodging with scenic views.', contact: '123-456-7890' },

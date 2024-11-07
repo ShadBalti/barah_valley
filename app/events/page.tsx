@@ -1,6 +1,6 @@
 
 // app/events/page.js
-import EventList from '../../components/EventList';
+import EventList from '../components/EventList';
 
 const events = [
   { title: 'Spring Festival', date: 'April 10, 2024', location: 'Barah Valley Square', description: 'A celebration of spring with local music and dance.' },

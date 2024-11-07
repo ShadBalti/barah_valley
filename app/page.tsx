@@ -1,5 +1,5 @@
 // app/page.js
-import Gallery from '../components/Gallery';
+import Gallery from './components/Gallery';
 
 export default function HomePage() {
   const images = [
