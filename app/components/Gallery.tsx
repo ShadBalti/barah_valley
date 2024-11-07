@@ -12,9 +12,16 @@ type GalleryProps = {
 };
 
 const Gallery: React.FC<GalleryProps> = ({ images }) => (
-  <div className="absolute inset-0 opacity-50 rounded-lg">
+  <div className="absolute inset-0 w-full h-full opacity-50 overflow-hidden rounded-lg">
     {images.map((image) => (
-      <Image key={image.id} src={image.src} alt={image.alt} width={200} height={150} />
+      <Image
+        key={image.id}
+        src={image.src}
+        alt={image.alt}
+        layout="fill" // Covers the entire container
+        objectFit="cover" // Ensures image covers container without distortion
+        className="absolute inset-0"
+      />
     ))}
   </div>
 );
