@@ -1,16 +1,50 @@
 // app/layout.js
-import './globals.css';
+import React from 'react';
+import type { Metadata } from 'next';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import './globals.css';
 
-export const metadata = {
-  title: 'Barah Valley',
-  description: 'Discover the beauty and culture of Barah Valley',
+export const metadata: Metadata = {
+  title: {
+    default: 'Explore Barah Valley',
+    template: '%s | Barah Valley',
+  },
+  description: 'Discover the beauty and culture of Barah Valley, a hidden gem with breathtaking landscapes, rich history, and vibrant traditions.',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+  },
+  openGraph: {
+    title: 'Explore Barah Valley',
+    description: 'Discover the breathtaking landscapes and rich cultural heritage of Barah Valley.',
+    url: 'https://barahvalley.vercel.app/',
+    siteName: 'Barah Valley',
+    images: [
+      {
+        url: '/images/valley-hero.jpg',
+        width: 800,
+        height: 600,
+        alt: 'View of Barah Valley',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Explore Barah Valley',
+    description: 'Discover the beauty and culture of Barah Valley.',
+    images: ['/images/valley-hero.jpg'],
+  },
 };
 
-export default function RootLayout({ children }) {
+const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <html lang="en">
+      <head>
+        {/* Metadata is handled by Next.js and does not require explicit tags here */}
+      </head>
       <body>
         <Header />
         <main>{children}</main>
@@ -18,4 +52,6 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
