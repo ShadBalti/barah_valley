@@ -1,54 +1,52 @@
-// app/contact/page.js
-'use client';
+import React, { useState } from 'react';
 
-import { useState } from 'react';
+const ContactPage: React.FC = () => {
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
 
-export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Example: Form submission code to Formspree or similar service
-    const response = await fetch('https://formspree.io/f/{form_id}', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
-    if (response.ok) {
-      alert('Message sent!');
-    } else {
-      alert('Error sending message.');
-    }
+    console.log('Form submitted', { name, email, message });
   };
 
   return (
     <div style={{ padding: '20px' }}>
       <h1>Contact Us</h1>
-      <form onSubmit={handleSubmit} style={{ maxWidth: '600px', margin: '0 auto' }}>
-        <label>
-          Name:
-          <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-        </label>
-        <label>
-          Email:
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-        </label>
-        <label>
-          Message:
-          <textarea name="message" value={formData.message} onChange={handleChange} required />
-        </label>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="name">Name:</label>
+          <input
+            id="name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="message">Message:</label>
+          <textarea
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+          ></textarea>
+        </div>
         <button type="submit">Send Message</button>
       </form>
     </div>
   );
-}
+};
 
+export default ContactPage;

@@ -1,18 +1,36 @@
 
 // app/events/page.js
 import EventList from '../components/EventList';
+import React from 'react';
+type Event = {
+  id: number;
+  title: string;
+  date: string;
+  description: string;
+};
 
-const events = [
-  { title: 'Spring Festival', date: 'April 10, 2024', location: 'Barah Valley Square', description: 'A celebration of spring with local music and dance.' },
-  { title: 'Cultural Fair', date: 'July 15, 2024', location: 'Central Park', description: 'An annual event showcasing local crafts and traditions.' },
-  { title: 'Harvest Celebration', date: 'October 5, 2024', location: 'Village Grounds', description: 'Join us for a feast and festivities celebrating the harvest.' },
+const events: Event[] = [
+  {
+    id: 1,
+    title: 'Spring Festival',
+    date: 'March 20, 2024',
+    description: 'Celebrate the arrival of spring with music and dance!',
+  },
+  {
+    id: 2,
+    title: 'Harvest Celebration',
+    date: 'September 15, 2024',
+    description: 'Join us for a day of traditional food and performances.',
+  },
 ];
 
-export default function EventsPage() {
+const EventsPage: React.FC = () => {
   return (
     <div style={{ padding: '20px' }}>
       <h1>Upcoming Events</h1>
       <EventList events={events} />
     </div>
   );
-}
+};
+
+export default EventsPage;
