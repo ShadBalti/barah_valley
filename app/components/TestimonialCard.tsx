@@ -1,5 +1,6 @@
 // components/TestimonialCard.tsx
 import React from 'react';
+import Image from 'next/image';
 
 type Testimonial = {
   id: number;
@@ -13,7 +14,7 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
       <div className="flex items-center mb-4">
-        <img
+        <Image
           src={testimonial.imageUrl}
           alt={testimonial.name}
           className="w-12 h-12 rounded-full object-cover mr-4"
