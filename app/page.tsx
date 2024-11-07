@@ -16,9 +16,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600 text-white min-h-screen">
       <div className="relative w-full h-96">
-        <Gallery images={images} 
-        className="absolute inset-0 opacity-50 rounded-lg"
-       />
+        <Gallery images={images} />
         <div className="relative z-10 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             Welcome to Barah Valley

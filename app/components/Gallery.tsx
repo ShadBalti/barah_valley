@@ -12,9 +12,9 @@ type GalleryProps = {
 };
 
 const Gallery: React.FC<GalleryProps> = ({ images }) => (
-  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+  <div className="absolute inset-0 opacity-50 rounded-lg">
     {images.map((image) => (
-      <Image key={image.id} src={image.src} alt={image.alt} width={200} height={150} style={{ borderRadius: '8px' }} />
+      <Image key={image.id} src={image.src} alt={image.alt} width={200} height={150} />
     ))}
   </div>
 );
