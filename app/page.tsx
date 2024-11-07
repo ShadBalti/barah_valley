@@ -1,16 +1,18 @@
 // app/page.js
 import Gallery from './components/Gallery';
-type ImageData = {
+const HomePage: React.FC = () => {
+  type ImageData = {
+  id: number;
   src: string;
   alt: string;
 };
 
-const HomePage: React.FC = () => {
-  const images: ImageData[] = [
-    { src: '/images/valley1.jpeg', alt: 'Beautiful valley view' },
-    { src: '/images/valley2.jpeg', alt: 'Mountain landscape' },
-    { src: '/images/valley3.jpeg', alt: 'River through valley' },
+const images: ImageData[] = [
+  { id: 1, src: '/images/valley1.jpeg', alt: 'Beautiful valley view' },
+  { id: 2, src: '/images/valley2.jpeg', alt: 'Mountain landscape' },
+  { id: 3, src: '/images/valley3.jpeg', alt: 'River through valley' },
 ];
+
   return (
     <div>
       <section style={{ textAlign: 'center', padding: '20px' }}>
@@ -23,3 +25,4 @@ const HomePage: React.FC = () => {
 }
 
 export default HomePage;
+
