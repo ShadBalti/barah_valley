@@ -17,7 +17,7 @@ const guideSections: GuideSection[] = [
   },
   {
     title: 'Top Activities',
-    content: 'Popular activities include hiking, exploring rock carvings, attending local festivals, and picnicking by the river. Always follow environmental guidelines to preserve the valley’s natural beauty.'
+    content: 'Popular activities include hiking, exploring rock carvings, attending local festivals, and picnicking by the river. Always follow environmental guidelines to preserve the valley natural beauty.'
   }
 ];
 

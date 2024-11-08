@@ -30,7 +30,7 @@ const AboutPage: React.FC = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-3 text-gray-800">Historical Background</h2>
           <p className="leading-relaxed text-gray-700">
-            Barah Valley's history is a tapestry of various cultures and traditions that have evolved over centuries. Local tales and legends add to its mystique, while ancient practices in music, dance, and the Balti language remain cherished by the people. The valley celebrates its history through annual cultural festivals and family traditions that have endured through generations.
+            Barah Valley history is a tapestry of various cultures and traditions that have evolved over centuries. Local tales and legends add to its mystique, while ancient practices in music, dance, and the Balti language remain cherished by the people. The valley celebrates its history through annual cultural festivals and family traditions that have endured through generations.
           </p>
         </section>
 
