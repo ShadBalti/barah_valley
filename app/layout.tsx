@@ -41,44 +41,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  // Structured Data (JSON-LD) for rich search results
-  jsonLd: {
-    "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    name: "Barah Valley",
-    description: "A hidden gem in Gilgit-Baltistan, Pakistan, Barah Valley offers breathtaking views, rich culture, and a variety of adventure activities.",
-    image: "/images/valley-hero.jpg",
-    url: "https://barahvalley.vercel.app",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Barah Valley, Ghanche, Gilgit-Baltistan, Pakistan",
-      addressLocality: "Ghanche",
-      addressRegion: "Gilgit-Baltistan",
-      postalCode: "00000",
-      addressCountry: "PK",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 35.5088,
-      longitude: 76.3456,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "09:00",
-      closes: "18:00",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "215",
-    },
-    sameAs: [
-      "https://facebook.com/BarahValley",
-      "https://twitter.com/BarahValley",
-      "https://instagram.com/BarahValley",
-    ],
-  },
+    
 };
 
 const RootLayout: React.FC < { children: React.ReactNode } > = ({ children }) => {
@@ -107,7 +70,6 @@ const RootLayout: React.FC < { children: React.ReactNode } > = ({ children }) =>
               <link rel="icon" href="/favicon.ico" />
               <title>{metadata.title.default}</title>
               {/* Structured Data */}
-              <script type="application/ld+json">{JSON.stringify(metadata.jsonLd)}</script>
             </head>
       <body>
         <Navbar />
