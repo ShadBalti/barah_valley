@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-green-400 to-blue-500 shadow-md fixed w-full z-50">
+    <nav className="bg-gradient-to-r from-green-400 to-blue-500 shadow-md fixed w-full z-50 mb-6">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <div className="text-white text-2xl font-bold">
@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
 
         {/* Menu Links */}
         <div className="hidden md:flex space-x-8">
-          <Link href="/home" className="text-white hover:text-yellow-200 transition duration-300">
+          <Link href="/" className="text-white hover:text-yellow-200 transition duration-300">
             Home
           </Link>
            <Link href="/about" className="text-white hover:text-yellow-200 transition duration-300">
