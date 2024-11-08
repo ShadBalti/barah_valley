@@ -16,7 +16,7 @@ const AboutPage: React.FC = () => {
       </Head>
 
       {/* Main Content */}
-      <div className="max-w-3xl mx-auto py-10 px-4 text-gray-400">
+      <div className="max-w-3xl mx-auto py-10 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white ">
         <h1 className="text-3xl md:text-4xl font-semibold text-center mb-8 text-gray-900">
           About Barah Valley
         </h1>

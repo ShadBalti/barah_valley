@@ -27,18 +27,21 @@ const festivalsData: Festival[] = [
 
 const Festivals: React.FC = () => {
   return (
-    <section className="py-10">
-      <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Festivals in Barah Valley</h2>
-      <div className="space-y-6">
-        {festivalsData.map((festival, index) => (
-          <div key={index} className="p-4 border rounded-lg shadow-sm">
-            <h3 className="text-xl font-semibold text-gray-800 mb-1">{festival.name}</h3>
-            <p className="text-gray-700 mb-2">{festival.description}</p>
-            <p className="text-gray-600 italic">When: {festival.date}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+    <section className="py-10 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Festivals in Barah Valley</h2>
+        <div className="space-y-6">
+          {festivalsData.map((festival, index) => (
+            <div 
+              key={index} 
+              className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+              <h3 className="text-2xl font-semibold text-gray-900 mb-2">{festival.name}</h3>
+              <p className="text-gray-700 mb-2">{festival.description}</p>
+              <p className="text-sm text-gray-600 italic">When: {festival.date}</p>
+            </div>
+          ))}
+        </div>
+      </section>
   );
 };
 
