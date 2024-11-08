@@ -1,5 +1,5 @@
 // app/page.js
-import Gallery from './components/Gallery';
+import Image from 'next/image';
 import FeatureSection from './components/FeatureSection';
 import TestimonialCard from './components/TestimonialCard';
 import Attractions from './components/Attractions';
@@ -26,17 +26,6 @@ const testimonials = [
 
 
 const HomePage: React.FC = () => {
-  type ImageData = {
-    id: number;
-    src: string;
-    alt: string;
-  };
-
-  const images: ImageData[] = [
-    { id: 1, src: '/images/valley1.jpeg', alt: 'Beautiful valley view' },
-    { id: 2, src: '/images/valley2.jpeg', alt: 'Mountain landscape' },
-    { id: 3, src: '/images/valley3.jpeg', alt: 'River through valley' },
-];
 
   return (
     <div className="flex flex-col items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600 text-white min-h-screen">
