@@ -2,8 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Header: React.FC = () => (
-
+const Navbar: React.FC = () => (
   <nav className="navbar rounded-box flex w-full gap-2 shadow max-md:flex-col md:items-center">
   <div className="flex w-full items-center justify-between">
     <div className="navbar-start items-center justify-between max-md:w-full">
@@ -32,4 +31,4 @@ const Header: React.FC = () => (
 </nav>
 );
 
-export default Header;
+export default Navbar;
