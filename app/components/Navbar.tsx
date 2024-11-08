@@ -25,10 +25,13 @@ const Navbar: React.FC = () => {
           <Link href="/home" className="text-white hover:text-yellow-200 transition duration-300">
             Home
           </Link>
+           <Link href="/about" className="text-white hover:text-yellow-200 transition duration-300">
+            About 
+          </Link>
           <Link href="/tourism" className="text-white hover:text-yellow-200 transition duration-300">
             Tourism
           </Link>
-          <Link href="#events" className="text-white hover:text-yellow-200 transition duration-300">
+          <Link href="/events" className="text-white hover:text-yellow-200 transition duration-300">
             Events
           </Link>
           <Link href="/directory" className="text-white hover:text-yellow-200 transition duration-300">
@@ -55,16 +58,19 @@ const Navbar: React.FC = () => {
           <Link href="/" className="block py-2 px-4 hover:bg-green-600" onClick={() => setIsOpen(false)}>
             Home
           </Link>
+           <Link href="/about" className="block py-2 px-4 hover:bg-green-600" onClick={() => setIsOpen(false)}>
+            About
+          </Link>
           <Link href="/tourism" className="block py-2 px-4 hover:bg-green-600" onClick={() => setIsOpen(false)}>
             Tourism
           </Link>
-          <Link href="#events" className="block py-2 px-4 hover:bg-green-600" onClick={() => setIsOpen(false)}>
+          <Link href="/events" className="block py-2 px-4 hover:bg-green-600" onClick={() => setIsOpen(false)}>
             Events
           </Link>
           <Link href="/directory" className="block py-2 px-4 hover:bg-green-600" onClick={() => setIsOpen(false)}>
             Gallery
           </Link>
-          <Link href="#contact" className="block py-2 px-4 hover:bg-green-600" onClick={() => setIsOpen(false)}>
+          <Link href="/contact" className="block py-2 px-4 hover:bg-green-600" onClick={() => setIsOpen(false)}>
             Contact
           </Link>
         </div>
