@@ -1,7 +1,7 @@
 // app/layout.js
 import React from 'react';
 import type { Metadata } from 'next';
-import Header from './components/Header';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import './globals.css';
 
@@ -46,7 +46,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         {/* Metadata is handled by Next.js and does not require explicit tags here */}
       </head>
       <body>
-        <Header />
+        <Navbar />
         <main>{children}</main>
         <Footer />
       </body>
