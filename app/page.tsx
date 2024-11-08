@@ -39,7 +39,7 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600 text-white min-h-screen">
-      <div className="relative w-full h-96">
+      <div className="relative w-full h-full">
         <Gallery images={images} />
         <div className="relative z-10 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
