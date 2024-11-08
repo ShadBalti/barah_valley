@@ -2,6 +2,9 @@
 import Gallery from './components/Gallery';
 import FeatureSection from './components/FeatureSection';
 import TestimonialCard from './components/TestimonialCard';
+import Attractions from './components/Attractions';
+import Festivals from './components/Festivals';
+import VisitorGuide from './components/VisitorGuide';
 import CallToAction from './components/CallToAction';
 const testimonials = [
   {
@@ -62,6 +65,9 @@ const HomePage: React.FC = () => {
       </div>
     </div>
      <div>
+      <Attractions />
+      <Festivals />
+      <VisitorGuide />
       {/* Other sections */}
       <CallToAction />
     </div>
