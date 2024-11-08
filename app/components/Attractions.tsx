@@ -36,7 +36,7 @@ const Attractions: React.FC = () => {
             key={index} 
             className="rounded-lg shadow-lg transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl overflow-hidden bg-white"
           >
-            <img src={attraction.imageUrl} alt={attraction.title} className="w-full h-52 object-cover" />
+            <Image src={attraction.imageUrl} alt={attraction.title} className="w-full h-52 object-cover" />
             <div className="p-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">{attraction.title}</h3>
               <p className="text-gray-600">{attraction.description}</p>
