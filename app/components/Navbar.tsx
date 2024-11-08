@@ -1,34 +1,76 @@
-// components/Header.tsx
-import React from 'react';
+'use client';
+// components/Navbar.tsx
+import { useState } from 'react';
 import Link from 'next/link';
 
-const Navbar: React.FC = () => (
-  <nav className="navbar rounded-box flex w-full gap-2 shadow max-md:flex-col md:items-center">
-  <div className="flex w-full items-center justify-between">
-    <div className="navbar-start items-center justify-between max-md:w-full">
-      <Link className="link text-base-content/90 link-neutral text-xl font-semibold no-underline" href="/">
-        Barah Valley 
-      </Link>
-      <div className="md:hidden">
-        <button type="button" className="collapse-toggle btn btn-outline btn-secondary btn-sm btn-square" data-collapse="#default-navbar-collapse" aria-controls="default-navbar-collapse" aria-label="Toggle navigation">
-          <span className="icon-[tabler--menu-2] collapse-open:hidden size-4"></span>
-          <span className="icon-[tabler--x] collapse-open:block hidden size-4"></span>
-        </button>
+const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <nav className="bg-gradient-to-r from-green-400 to-blue-500 shadow-md fixed w-full z-50">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+        {/* Logo */}
+        <div className="text-white text-2xl font-bold">
+          <Link href="/">
+            Barah Valley
+          </Link>
+        </div>
+
+        {/* Menu Links */}
+        <div className="hidden md:flex space-x-8">
+          <Link href="/home" className="text-white hover:text-yellow-200 transition duration-300">
+            Home
+          </Link>
+          <Link href="/tourism" className="text-white hover:text-yellow-200 transition duration-300">
+            Tourism
+          </Link>
+          <Link href="#events" className="text-white hover:text-yellow-200 transition duration-300">
+            Events
+          </Link>
+          <Link href="/directory" className="text-white hover:text-yellow-200 transition duration-300">
+            Directory
+          </Link>
+          <Link href="/contact" className="text-white hover:text-yellow-200 transition duration-300">
+            Contact
+          </Link>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button onClick={toggleMenu} className="text-white focus:outline-none">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
-  </div>
-  <div id="default-navbar-collapse" className="md:navbar-end collapse hidden grow basis-full overflow-hidden transition-[height] duration-300 max-md:w-full">
-    <ul className="menu md:menu-horizontal gap-2 p-0 text-base">
-      <li><Link href="/home"> Home </Link></li>
-      <li><Link href="/about"> About </Link></li>
-      <li><Link href="/tourism"> Tourism </Link></li>
-      <li><Link href="/directory"> Directory </Link></li>
-      <li><Link href="/events"> Ev </Link></li>
-      <li><Link href="/contact"> Contact </Link></li>
-      
-    </ul>
-  </div>
-</nav>
-);
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-green-500 text-white">
+          <Link href="/" className="block py-2 px-4 hover:bg-green-600" onClick={() => setIsOpen(false)}>
+            Home
+          </Link>
+          <Link href="/tourism" className="block py-2 px-4 hover:bg-green-600" onClick={() => setIsOpen(false)}>
+            Tourism
+          </Link>
+          <Link href="#events" className="block py-2 px-4 hover:bg-green-600" onClick={() => setIsOpen(false)}>
+            Events
+          </Link>
+          <Link href="/directory" className="block py-2 px-4 hover:bg-green-600" onClick={() => setIsOpen(false)}>
+            Gallery
+          </Link>
+          <Link href="#contact" className="block py-2 px-4 hover:bg-green-600" onClick={() => setIsOpen(false)}>
+            Contact
+          </Link>
+        </div>
+      )}
+    </nav>
+  );
+};
 
 export default Navbar;
