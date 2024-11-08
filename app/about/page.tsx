@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="max-w-3xl mx-auto py-10 px-4 text-gray-800">
+    <div className="max-w-3xl mx-auto py-10 px-4 text-gray-400">
           <h1 className="text-3xl md:text-4xl font-semibold text-center mb-8">
             About Barah Valley
           </h1>
