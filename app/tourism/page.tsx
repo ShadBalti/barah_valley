@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import React from 'react';
-import VisitorGuide from './components/VisitorGuide';
+import VisitorGuide from '../components/VisitorGuide';
 
 
 type TouristSpot = {
