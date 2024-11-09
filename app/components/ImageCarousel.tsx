@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 interface ImageCarouselProps {
   images: string[];
@@ -26,7 +27,7 @@ const ImageCarousel: React.FC < ImageCarouselProps > = ({ images }) => {
     <div className="relative group">
       {/* Image Display */}
       <div className="w-full h-96 sm:h-[400px] lg:h-[500px] overflow-hidden rounded-lg shadow-lg">
-        <img
+        <Image
           src={images[currentIndex]}
           alt={`Barah Valley Image ${currentIndex + 1}`}
           className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform group-hover:scale-105"

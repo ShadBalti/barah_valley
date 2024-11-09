@@ -5,7 +5,7 @@ import ImageCarousel from '../components/ImageCarousel';
 import Gallery from '../components/Gallery';
 
 const AboutPage: React.FC = () => {
-  const GimagesImages = [
+  const GalleryImage = [
   { id: 1, src: '/images/valley1.jpg', alt: 'Scenic View 1 of Barah Valley' },
   { id: 2, src: '/images/valley2.jpg', alt: 'Mountain Range in Barah Valley' },
   { id: 3, src: '/images/valley3.jpg', alt: 'Sunset in Barah Valley' },
@@ -96,7 +96,7 @@ const AboutPage: React.FC = () => {
               </section>
                <div className="py-10 px-4">
                  <h1 className="text-3xl font-semibold text-center mb-6">Explore the Beauty of Barah Valley</h1>
-                 <Gallery images={images} />
+                 <Gallery images={GalleryImage} />
               </div>
               {/* Call-to-Action (CTA) */}
               <div className="text-center mt-10">
