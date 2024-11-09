@@ -2,7 +2,16 @@
 import React from 'react';
 import Head from 'next/head';
 import ImageCarousel from '../components/ImageCarousel';
+import Gallery from '../components/Gallery';
+
 const AboutPage: React.FC = () => {
+  const GimagesImages = [
+  { id: 1, src: '/images/valley1.jpg', alt: 'Scenic View 1 of Barah Valley' },
+  { id: 2, src: '/images/valley2.jpg', alt: 'Mountain Range in Barah Valley' },
+  { id: 3, src: '/images/valley3.jpg', alt: 'Sunset in Barah Valley' },
+  { id: 4, src: '/images/valley4.jpg', alt: 'Green Meadows of Barah Valley' },
+  // Add more images as needed
+];
   const images = [
     '/images/valley1.jpg',
     '/images/valley2.jpg',
@@ -85,7 +94,10 @@ const AboutPage: React.FC = () => {
                   When visiting Barah Valley, it essential to respect the environment and the customs of the local people. Dress appropriately, be mindful of cultural norms, and ask for permission before taking photographs of people. Immerse yourself in the valleys slow-paced life, taking time to appreciate the natural and cultural richness it offers.
                 </p>
               </section>
-      
+               <div className="py-10 px-4">
+                 <h1 className="text-3xl font-semibold text-center mb-6">Explore the Beauty of Barah Valley</h1>
+                 <Gallery images={images} />
+              </div>
               {/* Call-to-Action (CTA) */}
               <div className="text-center mt-10">
                 <h3 className="text-xl font-semibold text-gray-800 mb-4">
