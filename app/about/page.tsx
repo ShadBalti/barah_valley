@@ -6,15 +6,15 @@ import Gallery from '../components/Gallery';
 
 const AboutPage: React.FC = () => {
   const GalleryImage = [
-    { id: 1, src: '/images/valley1.jpg', alt: 'Scenic View 1 of Barah Valley' },
-    { id: 2, src: '/images/valley2.jpg', alt: 'Mountain Range in Barah Valley' },
-    { id: 3, src: '/images/valley3.jpg', alt: 'Sunset in Barah Valley' },
-    { id: 4, src: '/images/valley4.jpg', alt: 'Green Meadows of Barah Valley' },
+    { id: 1, src: '../images/valley1.jpg', alt: 'Scenic View 1 of Barah Valley' },
+    { id: 2, src: '../images/valley2.jpg', alt: 'Mountain Range in Barah Valley' },
+    { id: 3, src: '../images/valley3.jpg', alt: 'Sunset in Barah Valley' },
+    { id: 4, src: '/public/images/valley1.jpeg', alt: 'Green Meadows of Barah Valley' },
     // Add more images as needed
   ];
 
   const images = [
-    '/images/valley1.jpg',
+    '/public/images/valley1.jpeg',
     '/images/valley2.jpg',
     '/images/valley3.jpg'
   ];
@@ -32,7 +32,7 @@ const AboutPage: React.FC = () => {
       </Head>
 
       {/* Main Content */}
-      <div className="max-w-3xl mx-auto py-12 px-6 bg-gradient-to-r from-green-400 to-blue-600 text-white">
+      <div className="max-w-4xl mx-auto py-12 px-6 bg-gradient-to-r from-green-400 to-blue-600 text-white">
         <h1 className="text-4xl font-extrabold text-center mb-8 text-white">
           About Barah Valley
         </h1>
