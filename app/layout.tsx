@@ -60,6 +60,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://barahvalley.vercel.app',
   },
+  other: {
+    'google-site-verification': '6qYt2H85MUvuaHNGAZKRY87nANOkZ7hRfCgPcs6EOKY', // Optional if using Google Search Console
+  },
 };
 const RootLayout: React.FC < { children: React.ReactNode } > = ({ children }) => {
   return (
