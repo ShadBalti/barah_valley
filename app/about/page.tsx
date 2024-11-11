@@ -70,7 +70,7 @@ const AboutPage: React.FC = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-3 text-white">Cultural Heritage and Festivals</h2>
           <p className="leading-relaxed text-gray-200">
-            Culture is at the heart of Barah Valley. Traditional festivals like the harvest festival and spring celebrations are marked by music, dance, and communal gatherings. These events are a reflection of the valley\'s warm, community-driven lifestyle and are an incredible opportunity for visitors to experience Balti culture firsthand.
+            Culture is at the heart of Barah Valley. Traditional festivals like the harvest festival and spring celebrations are marked by music, dance, and communal gatherings. These events are a reflection of the valleys warm, community-driven lifestyle and are an incredible opportunity for visitors to experience Balti culture firsthand.
           </p>
         </section>
 
@@ -86,7 +86,7 @@ const AboutPage: React.FC = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-3 text-white">Lifestyle and Community Living</h2>
           <p className="leading-relaxed text-gray-200">
-            Life in Barah Valley moves at a slower pace, emphasizing simplicity and close connection to nature. The community is known for its hospitality, and farming plays a significant role in daily life. The fertile soil supports a variety of crops, and sustainable living practices are woven into the fabric of the valley\'s culture.
+            Life in Barah Valley moves at a slower pace, emphasizing simplicity and close connection to nature. The community is known for its hospitality, and farming plays a significant role in daily life. The fertile soil supports a variety of crops, and sustainable living practices are woven into the fabric of the valleys culture.
           </p>
         </section>
 
@@ -94,7 +94,7 @@ const AboutPage: React.FC = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-3 text-white">Visitor Tips and Etiquette</h2>
           <p className="leading-relaxed text-gray-200">
-            When visiting Barah Valley, it is essential to respect the environment and the customs of the local people. Dress appropriately, be mindful of cultural norms, and ask for permission before taking photographs of people. Immerse yourself in the valley\'s slow-paced life, taking time to appreciate the natural and cultural richness it offers.
+            When visiting Barah Valley, it is essential to respect the environment and the customs of the local people. Dress appropriately, be mindful of cultural norms, and ask for permission before taking photographs of people. Immerse yourself in the valleys slow-paced life, taking time to appreciate the natural and cultural richness it offers.
           </p>
         </section>
 

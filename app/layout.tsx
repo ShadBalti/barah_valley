@@ -7,19 +7,19 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Discover Barah Valley – Pakistan\’s Hidden Gem of Culture and Beauty',
+    default: 'Discover Barah Valley – Pakistans Hidden Gem of Culture and Beauty',
     template: '%s | Barah Valley Tourism',
   },
-  description: 'Explore Barah Valley, Pakistan\’s hidden gem, with stunning landscapes, vibrant festivals, unique culture, traditional food, and must-visit spots. Begin your adventure in Barah Valley today!',
+  description: 'Explore Barah Valley, Pakistans hidden gem, with stunning landscapes, vibrant festivals, unique culture, traditional food, and must-visit spots. Begin your adventure in Barah Valley today!',
   viewport: {
     width: 'device-width',
     initialScale: 1,
   },
   openGraph: {
-    title: 'Discover Barah Valley – Pakistan\’s Hidden Gem',
+    title: 'Discover Barah Valley – Pakistans Hidden Gem',
     description: 'Immerse yourself in the scenic beauty and cultural richness of Barah Valley. From breathtaking mountains to traditional cuisine, experience the essence of Pakistani heritage in Barah Valley.',
     url: 'https://barahvalley.vercel.app',
-    siteName: 'Barah Valley – Explore Pakistan\’s Hidden Gem',
+    siteName: 'Barah Valley – Explore Pakistans Hidden Gem',
     images: [
       {
         url: '/images/valley-hero.jpg',
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Discover Barah Valley – Pakistan\’s Hidden Gem',
-    description: 'Explore Barah Valley\’s scenic views, cultural events, and traditional Pakistani experiences. Plan your next adventure here!',
+    title: 'Discover Barah Valley – Pakistan Hidden Gem',
+    description: 'Explore Barah Valley scenic views, cultural events, and traditional Pakistani experiences. Plan your next adventure here!',
     images: ['/images/valley-hero.jpg'],
   },
   robots: {
