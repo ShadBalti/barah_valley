@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import './globals.css';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: {
@@ -64,6 +65,8 @@ export const metadata: Metadata = {
     'google-site-verification': '6qYt2H85MUvuaHNGAZKRY87nANOkZ7hRfCgPcs6EOKY', // Optional if using Google Search Console
   },
 };
+const GA_TRACKING_ID = 'G-18RPH6R102';
+
 const RootLayout: React.FC < { children: React.ReactNode } > = ({ children }) => {
   return (
     <html lang="en">
@@ -71,6 +74,23 @@ const RootLayout: React.FC < { children: React.ReactNode } > = ({ children }) =>
         <Navbar />
         <main>{children}</main>
         <Footer />
+         {/* Google Analytics Script */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_TRACKING_ID}');
+            `,
+          }}
+        /> 
       </body>
     </html>
   );
