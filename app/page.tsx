@@ -6,6 +6,7 @@ import Attractions from './components/Attractions';
 import Festivals from './components/Festivals';
 import VisitorGuide from './components/VisitorGuide';
 import CallToAction from './components/CallToAction';
+import WeatherWidget from './components/WeatherWidget.tsx';
 const testimonials = [
   {
     id: 1,
@@ -75,6 +76,7 @@ const HomePage: React.FC = () => {
       <VisitorGuide />
       {/* Other sections */}
       <CallToAction />
+      <WeatherWidget />
     </div>
     </div>
   );
