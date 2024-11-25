@@ -6,8 +6,8 @@ interface Attraction {
   title: string;
   description: string;
   imageUrl: string;
-  category?: string;
-  highlights?: string[];
+  category ? : string;
+  highlights ? : string[];
 }
 
 const attractionsData: Attraction[] = [
@@ -36,8 +36,13 @@ const attractionsData: Attraction[] = [
   {
     title: 'Riverfront Views',
     description: 'Relax by the riverside, where you can picnic, fish, or simply unwind surrounded by nature.',
-    imageUrl: '/images/valley2.jpeg', // Replace with actual image path
-
+    imageUrl: '/images/valley3.jpeg', // Replace with actual image path
+    category: "Culture",
+    highlights: [
+      "Authentic local crafts",
+      "Traditional music events",
+      "Family-friendly activities",
+    ],
   }
 ];
 
