@@ -9,6 +9,8 @@ import CallToAction from './components/CallToAction';
 import WeatherWidget from './components/WeatherWidget';
 import LocalCuisine from './components/LocalCuisine';
 import Quiz from './components/Quiz';
+import HeroSection from './components/HeroSection';
+
 const testimonials = [
   {
     id: 1,
@@ -32,35 +34,7 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600 text-white min-h-screen">
-      <div className="relative w-full h-screen overflow-hidden">
-            {/* Background Image */}
-            <div className="absolute inset-0 w-full h-full">
-              <Image 
-                src='images/valley-hero.jpeg' 
-                alt="Scenic view of Barah Valley" 
-                layout="fill" 
-                objectFit="cover" 
-                quality={85} 
-                className="opacity-80"
-              />
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/70"></div>
-            </div>
-      
-            {/* Text Content */}
-            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-md">
-                Welcome to Barah Valley
-              </h1>
-              <p className="text-lg md:text-2xl max-w-xl mx-auto leading-relaxed drop-shadow-md">
-                Experience the breathtaking beauty and rich culture of Barah Valley.
-              </p>
-              {/* Optional Call-to-Action Button */}
-              <button className="mt-6 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-md text-lg font-semibold shadow-md transition">
-                Explore More
-              </button>
-            </div>
-          </div>
+      <HeroSection />
       <div>
       <FeatureSection />
       </div>

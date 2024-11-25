@@ -102,18 +102,33 @@ const features: Feature[] = [
 ];
 const FeatureSection: React.FC = () => {
   return (
-    <div className="py-16 px-4 bg-white">
-      <h2 className="text-3xl font-semibold text-center text-gray-800 mb-8">Why Visit Barah Valley</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {features.map((feature) => (
-          <div key={feature.id} className="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
-            <div className="text-4xl mb-4">{feature.icon}</div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
-            <p className="text-gray-600">{feature.description}</p>
+    <section className="py-16 bg-gradient-to-br from-blue-100 to-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent pointer-events-none" />
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
+            Why Visit Barah Valley
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            {features.map((feature) => (
+              <div
+                key={feature.id}
+                className="bg-white p-8 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-tr from-blue-100 to-blue-50"
+              >
+                <div className="text-5xl mb-6 text-blue-500">{feature.icon}</div>
+                <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+          <div className="text-center mt-12">
+            <button className="px-6 py-3 bg-blue-500 text-white rounded-lg font-medium shadow-lg hover:bg-blue-600 hover:shadow-xl transition duration-300">
+              Explore More Features
+            </button>
+          </div>
+        </div>
+      </section>
   );
 };
 
