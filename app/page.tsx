@@ -1,5 +1,4 @@
 // app/page.js
-import Image from 'next/image';
 import FeatureSection from './components/FeatureSection';
 import TestimonialCard from './components/TestimonialCard';
 import Attractions from './components/Attractions';
