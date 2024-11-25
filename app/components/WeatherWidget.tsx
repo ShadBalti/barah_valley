@@ -1,7 +1,7 @@
 // components/WeatherWidget.tsx
 'use client';
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+
 interface WeatherData {
   temperature: number;
   description: string;
@@ -70,7 +70,7 @@ const WeatherWidget: React.FC = () => {
   return (
     <div className="bg-white shadow-lg rounded-lg p-4 flex items-center space-x-4">
       <div>
-        <Image src={weather?.icon} alt={weather?.description} className="w-16 h-16" />
+        <img src={weather?.icon} alt={weather?.description} className="w-16 h-16" />
       </div>
       <div>
         <h3 className="text-lg font-semibold text-gray-800">Barah Valley Weather</h3>
