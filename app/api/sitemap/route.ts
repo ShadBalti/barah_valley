@@ -1,10 +1,10 @@
 // app/api/sitemap/route.ts
-
 import { NextResponse } from 'next/server';
 
 export async function GET() {
   const baseUrl = 'https://barahvalley.vercel.app';
 
+  // Define your site pages dynamically
   const pages = [
     '/',
     '/about',
@@ -12,28 +12,27 @@ export async function GET() {
     '/events',
     '/directory',
     '/contact',
-    // Add any additional pages here
+    // Add additional static or dynamic pages here
   ];
 
-  const sitemap = `
-    <?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${pages
-        .map(
-          (page) => `
-            <url>
-              <loc>${baseUrl}${page}</loc>
-              <lastmod>${new Date().toISOString()}</lastmod>
-              <changefreq>monthly</changefreq>
-              <priority>0.8</priority>
-            </url>
-          `
-        )
-        .join('')}
-    </urlset>
-  `;
+  // Construct the sitemap XML structure
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    ${pages
+      .map((page) => {
+        const lastModified = new Date().toISOString();
+        return `
+        <url>
+          <loc>${baseUrl}${page}</loc>
+          <lastmod>${lastModified}</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>${page === '/' ? '1.0' : '0.8'}</priority>
+        </url>`;
+      })
+      .join('')}
+  </urlset>`;
 
-  return new NextResponse(sitemap, {
+  return NextResponse.json(sitemap, {
     headers: {
       'Content-Type': 'application/xml',
     },

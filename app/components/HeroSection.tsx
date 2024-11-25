@@ -27,7 +27,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 space-y-6">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4 space-y-6">
         <h1 className="text-5xl md:text-7xl font-bold mb-2 drop-shadow-lg animate-fade-in">
           Discover Barah Valley
         </h1>
