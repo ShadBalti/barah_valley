@@ -11,14 +11,14 @@ interface WeatherData {
 }
 
 const WeatherWidget: React.FC = () => {
-  const [weather, setWeather] = useState<WeatherData | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const [weather, setWeather] = useState < WeatherData | null > (null);
+  const [loading, setLoading] = useState < boolean > (true);
+  const [error, setError] = useState < string | null > (null);
 
   const API_KEY = '28df265f84d5ecba474f5d0dc363c05a';
-  const LOCATION = 'Barah Valley';
-  const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${LOCATION}&units=metric&appid=${API_KEY}`;
-
+  const LAT = '35.45'; // Latitude of Barah Valley
+  const LON = '74.62'; // Longitude of Barah Valley
+  const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&units=metric&appid=${API_KEY}`;
   useEffect(() => {
     const fetchWeather = async () => {
       try {
@@ -30,8 +30,8 @@ const WeatherWidget: React.FC = () => {
 
         // Define the expected API response structure
         interface ApiResponse {
-          main: { temp: number; humidity: number };
-          weather: { description: string; icon: string }[];
+          main: { temp: number;humidity: number };
+          weather: { description: string;icon: string } [];
           wind: { speed: number };
         }
 
