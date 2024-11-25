@@ -3,6 +3,63 @@ import React from 'react';
 import Head from 'next/head';
 import ImageCarousel from '../components/ImageCarousel';
 import Gallery from '../components/Gallery';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: {
+    default: 'About Barah Valley – History, Culture, and Vision',
+    template: '%s | About Barah Valley',
+  },
+  description: 'Learn about Barah Valley, a hidden treasure in Pakistan. Discover its rich history, cultural heritage, and the vision behind preserving its natural beauty and traditions.',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+  },
+  openGraph: {
+    title: 'About Barah Valley – History, Culture, and Vision',
+    description: 'Dive into the story of Barah Valley, exploring its history, traditions, and the efforts to promote sustainable tourism while preserving its unique identity.',
+    url: 'https://barahvalley.vercel.app/about',
+    siteName: 'Barah Valley – About Us',
+    images: [
+      {
+        url: '/images/valley-hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Historical landmarks and cultural events in Barah Valley',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Barah Valley – History, Culture, and Vision',
+    description: 'Discover Barah Valley’s rich history, vibrant culture, and the mission to preserve its natural and cultural heritage for future generations.',
+    images: ['/images/valley-hero.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  keywords: [
+    'About Barah Valley',
+    'History of Barah Valley',
+    'Barah Valley culture',
+    'Barah Valley traditions',
+    'Barah Valley heritage',
+    'Sustainable tourism in Barah Valley',
+    'Barah Valley preservation',
+    'Barah Valley vision',
+    'Cultural events in Barah Valley',
+    'Barah Valley community',
+    'Barah Valley historical landmarks',
+    'Barah Valley tourism mission',
+  ],
+  alternates: {
+    canonical: 'https://barahvalley.vercel.app/about',
+  },
+};
+
 
 const AboutPage: React.FC = () => {
   const GalleryImage = [
