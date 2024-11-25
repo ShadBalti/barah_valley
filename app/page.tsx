@@ -8,7 +8,7 @@ import VisitorGuide from './components/VisitorGuide';
 import CallToAction from './components/CallToAction';
 import WeatherWidget from './components/WeatherWidget';
 import LocalCuisine from './components/LocalCuisine';
-import Quiz from '../components/Quiz';
+import Quiz from './components/Quiz';
 const testimonials = [
   {
     id: 1,
