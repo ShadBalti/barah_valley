@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const NotFoundPage: React.FC = () => {
+const NotFound: React.FC = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="text-center p-8 bg-white rounded-md shadow-lg">
@@ -22,4 +22,4 @@ const NotFoundPage: React.FC = () => {
   );
 };
 
-export default NotFoundPage;
+export default NotFound;
