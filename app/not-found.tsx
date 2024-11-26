@@ -9,7 +9,7 @@ const NotFoundPage: React.FC = () => {
       <div className="text-center p-8 bg-white rounded-md shadow-lg">
         <h1 className="text-5xl font-bold text-red-500">404</h1>
         <p className="mt-4 text-xl text-gray-600">
-          Oops! The page you're looking for doesn't exist.
+          Oops! The page you\'re looking for doesn\'t exist.
         </p>
         <Link
           href="/"
