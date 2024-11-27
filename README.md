@@ -1,4 +1,14 @@
-<h1 align="center" style="font-weight: bold; font-size: 2.5em;">Barah Valley Website 🌄</h1>
+# This tells Replit to use the "npm" package manager 
+language = "nodejs"
+
+# This is the command Replit should run to start your Next.js development server
+run = "npm run dev" 
+
+# This will make Replit install all your dependencies when the project is loaded
+install = "npm install"
+
+# This command will build your project for production (when you deploy)
+build = "npm run build"<h1 align="center" style="font-weight: bold; font-size: 2.5em;">Barah Valley Website 🌄</h1>
 
 <p align="center">
   <img src="https://via.placeholder.com/800x400?text=Barah+Valley" alt="Barah Valley Landscape" style="border-radius: 8px;">

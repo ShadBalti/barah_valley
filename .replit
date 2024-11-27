@@ -1,0 +1,23 @@
+modules = ["nodejs-20", "web"]
+run = "npm run dev"
+
+[nix]
+channel = "stable-24_05"
+# This tells Replit to use the "npm" package manager 
+language = "nodejs"
+
+# This is the command Replit should run to start your Next.js development server
+run = "npm run dev" 
+
+# This will make Replit install all your dependencies when the project is loaded
+install = "npm install"
+
+# This command will build your project for production (when you deploy)
+build = "npm run build"
+
+[deployment]
+run = ["sh", "-c", "npm run dev"]
+
+[[ports]]
+localPort = 3000
+externalPort = 80
