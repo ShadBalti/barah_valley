@@ -9,15 +9,15 @@ interface FormData {
 }
 
 export default function Register() {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState < FormData > ({
     name: '',
     email: '',
     password: '',
   });
-  const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState<string | null>(null);
+  const [error, setError] = useState < string | null > (null);
+  const [success, setSuccess] = useState < string | null > (null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent < HTMLInputElement > ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -41,11 +41,11 @@ export default function Register() {
 
       setSuccess('Registration successful! Please log in.');
       setFormData({ name: '', email: '', password: '' });
-    } catch (err: any) {
-      setError(err.message || 'Something went wrong.');
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Something went wrong.';
+      setError(errorMessage);
     }
   };
-
   return (
     <div className="max-w-md mx-auto mt-10">
       <h1 className="text-2xl font-bold text-center">Register</h1>

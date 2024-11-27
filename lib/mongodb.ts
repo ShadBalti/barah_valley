@@ -1,6 +1,5 @@
 import { MongoClient, Db } from 'mongodb';
 
-let cachedClient: MongoClient | null = null;
 let cachedDb: Db | null = null;
 
 export async function connectToDatabase(): Promise<Db> {
@@ -13,7 +12,6 @@ export async function connectToDatabase(): Promise<Db> {
 
   const client = new MongoClient(uri);
   await client.connect();
-  cachedClient = client;
   cachedDb = client.db(); // Use the default database defined in the connection string
   return cachedDb;
 }
