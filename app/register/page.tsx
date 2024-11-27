@@ -47,11 +47,9 @@ export default function Register() {
     }
   };
   return (
-    <div className="max-w-md mx-auto mt-10">
-      <h1 className="text-2xl font-bold text-center">Register</h1>
-      {error && <p className="text-red-500">{error}</p>}
-      {success && <p className="text-green-500">{success}</p>}
-      <form onSubmit={handleSubmit} className="mt-4">
+    <div className="max-w-md mx-auto mt-10 h-full my-[30]">
+      <h1 className="text-2xl font-bold text-center mt-8">Register</h1>
+       <form onSubmit={handleSubmit} className="mt-4">
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700">Name</label>
           <input
@@ -91,6 +89,9 @@ export default function Register() {
         <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded">
           Register
         </button>
+         {error && <p className="text-red-500">{error}</p>}
+          {success && <p className="text-green-500">{success}</p>}
+     
       </form>
     </div>
   );
