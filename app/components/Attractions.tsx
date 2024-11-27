@@ -25,7 +25,7 @@ const attractionsData: Attraction[] = [
   {
     title: 'Ancient Rock Carvings',
     description: 'Explore the ancient petroglyphs scattered throughout the valley, each telling stories from generations past.',
-    imageUrl: '/images/valley2.jpeg.', // Replace with actual image path
+    imageUrl: '/images/valley2.jpeg', // Replace with actual image path
     category: "Culture",
     highlights: [
       "Authentic local crafts",

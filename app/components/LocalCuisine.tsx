@@ -22,21 +22,21 @@ const dishes: Dish[] = [
     id: 1,
     name: 'Thukpa',
     description: 'A hearty noodle soup packed with vegetables and spices, perfect for cold evenings.',
-    imageUrl: '/images/thukpa.jpg',
+    imageUrl: '/images/Thukpa.jpg',
     recipe: 'Boil noodles, add broth, veggies, and spices. Simmer and serve hot.',
   },
   {
     id: 2,
     name: 'Momo',
     description: 'Delicious steamed dumplings filled with minced meat or vegetables.',
-    imageUrl: '/images/momo.jpeg',
+    imageUrl: '/images/Momo.jpeg',
     recipe: 'Prepare filling, wrap in dough, steam for 10 minutes, and serve with chutney.',
   },
   {
     id: 3,
     name: 'Skyu',
     description: 'A traditional Balti pasta stew with rich flavors of butter and veggies.',
-    imageUrl: '/images/skyu.jpeg',
+    imageUrl: '/images/Skyu.jpeg',
   },
 ];
 

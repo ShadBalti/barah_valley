@@ -47,27 +47,26 @@ const HeroSection: React.FC = () => {
             Learn More
           </button>
         </div>
-      </div>
-
-      {/* Info Bar */}
-      <div className="absolute bottom-8 w-full z-20 px-6">
-        <div className="container mx-auto flex flex-wrap justify-center gap-6 text-center text-white">
-          <div className="bg-black/40 rounded-lg p-4 shadow-md w-36 animate-fade-in-up">
-            <span className="text-4xl">👨‍👩‍👧‍👦</span>
-            <h3 className="text-lg font-semibold mt-2">Population</h3>
-            <p className="text-sm">~20,000</p>
-          </div>
-          <div className="bg-black/40 rounded-lg p-4 shadow-md w-36 animate-fade-in-up">
-            <span className="text-4xl">🏘️</span>
-            <h3 className="text-lg font-semibold mt-2">Neighborhoods</h3>
-            <p className="text-sm">8 Villages</p>
-          </div>
-          <div className="bg-black/40 rounded-lg p-4 shadow-md w-36 animate-fade-in-up">
-            <span className="text-4xl">🏔️</span>
-            <h3 className="text-lg font-semibold mt-2">Elevation</h3>
-            <p className="text-sm">2,800m</p>
-          </div>
-        </div>
+              { /* Info Bar */ }
+              <div className="absolute bottom-8 w-full z-20 px-6">
+                <div className="container mx-auto flex flex-wrap justify-center gap-6 text-center text-white">
+                  <div className="bg-black/40 rounded-lg p-4 shadow-md w-36 animate-fade-in-up">
+                    <span className="text-4xl">👨‍👩‍👧‍👦</span>
+                    <h3 className="text-lg font-semibold mt-2">Population</h3>
+                    <p className="text-sm">~20,000</p>
+                  </div>
+                  <div className="bg-black/40 rounded-lg p-4 shadow-md w-36 animate-fade-in-up">
+                    <span className="text-4xl">🏘️</span>
+                    <h3 className="text-lg font-semibold mt-2">Neighborhoods</h3>
+                    <p className="text-sm">8 Villages</p>
+                  </div>
+                  <div className="bg-black/40 rounded-lg p-4 shadow-md w-36 animate-fade-in-up">
+                    <span className="text-4xl">🏔️</span>
+                    <h3 className="text-lg font-semibold mt-2">Elevation</h3>
+                    <p className="text-sm">2,800m</p>
+                  </div>
+                </div>
+              </div>
       </div>
     </div>
   );

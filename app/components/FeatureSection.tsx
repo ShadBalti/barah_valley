@@ -104,7 +104,7 @@ const FeatureSection: React.FC = () => {
   return (
     <section className="py-16 bg-gradient-to-br from-blue-100 to-white w-full relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent pointer-events-none" />
-        <div className="container mx-auto px-6">
+        <div>
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
             Why Visit Barah Valley
           </h2>
