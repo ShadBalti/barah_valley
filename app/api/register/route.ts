@@ -14,15 +14,17 @@ export async function POST(request: Request) {
 
     // Validate input
     if (!name || !email || !password) {
+      console.error('Validation Error: Missing fields');
       return NextResponse.json({ message: 'All fields are required.' }, { status: 400 });
     }
 
     const db = await connectToDatabase();
-    const usersCollection = db.collection('users');
+    const usersCollection = db.collection('user');
 
     // Check if user already exists
     const existingUser = await usersCollection.findOne({ email });
     if (existingUser) {
+      console.error('Registration Error: Email already exists');
       return NextResponse.json({ message: 'Email is already registered.' }, { status: 400 });
     }
 
@@ -37,11 +39,15 @@ export async function POST(request: Request) {
       createdAt: new Date(),
     };
 
-    await usersCollection.insertOne(newUser);
+    const result = await usersCollection.insertOne(newUser);
+    if (!result.acknowledged) {
+      console.error('Database Error: Failed to insert user');
+      throw new Error('Failed to register user');
+    }
 
     return NextResponse.json({ message: 'User registered successfully.' }, { status: 201 });
   } catch (error) {
-    console.error('Error during registration:', error);
+    console.error('Internal Server Error:', error);
     return NextResponse.json({ message: 'Internal Server Error.' }, { status: 500 });
   }
 }
