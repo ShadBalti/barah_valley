@@ -7,7 +7,7 @@ import UserModel from "../../../../models/User";
 import bcrypt from "bcrypt";
 
 // Define the NextAuth options with explicit types
-export const authOptions: NextAuthOptions = {
+const authOptions: NextAuthOptions = {
   adapter: MongoDBAdapter(clientPromise),
   providers: [
     GoogleProvider({
