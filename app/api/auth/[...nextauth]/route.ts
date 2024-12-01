@@ -1,4 +1,4 @@
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthOptions, Session, JWT } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
@@ -6,8 +6,8 @@ import clientPromise from "../../../../lib/mongodb";
 import UserModel from "../../../../models/User";
 import bcrypt from "bcrypt";
 
-// Define the NextAuth configuration
-const authOptions = {
+// Define the NextAuth options with explicit types
+export const authOptions: NextAuthOptions = {
   adapter: MongoDBAdapter(clientPromise),
   providers: [
     GoogleProvider({
@@ -52,13 +52,13 @@ const authOptions = {
     strategy: "jwt",
   },
   callbacks: {
-    async session({ session, token }: { session: any; token: any }) {
+    async session({ session, token }: { session: Session; token: JWT }) {
       if (token?.id) {
         session.user = { ...session.user, id: token.id };
       }
       return session;
     },
-    async jwt({ token, user }: { token: any; user?: any }) {
+    async jwt({ token, user }: { token: JWT; user?: { id: string } }) {
       if (user) {
         token.id = user.id;
       }
