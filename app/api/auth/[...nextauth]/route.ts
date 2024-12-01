@@ -5,7 +5,25 @@ import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import clientPromise from "../../../../lib/mongodb";
 import UserModel from "../../../../models/User";
 import bcrypt from "bcrypt";
-import { JWT } from "next-auth/jwt"; // Import JWT type from next-auth/jwt
+import { JWT } from "next-auth/jwt";
+
+// Extend the default Session and JWT types
+declare module "next-auth" {
+  interface Session {
+    user: {
+      id: string;
+      name ? : string | null;
+      email ? : string | null;
+      image ? : string | null;
+    };
+  }
+}
+
+declare module "next-auth/jwt" {
+  interface JWT {
+    id: string;
+  }
+}
 
 const authOptions: NextAuthOptions = {
   adapter: MongoDBAdapter(clientPromise),
@@ -24,7 +42,7 @@ const authOptions: NextAuthOptions = {
         if (!credentials) {
           throw new Error("Credentials not provided");
         }
-
+        
         const { email, password } = credentials;
 
         // Find the user by email in the database
@@ -54,13 +72,13 @@ const authOptions: NextAuthOptions = {
   callbacks: {
     async session({ session, token }: { session: Session;token: JWT }) {
       if (token?.id) {
-        session.user = { ...session.user, id: token.id };
+        session.user.id = token.id; // Add the id property to the session object
       }
       return session;
     },
     async jwt({ token, user }: { token: JWT;user ? : { id: string } }) {
       if (user) {
-        token.id = user.id;
+        token.id = user.id; // Add the id property to the token
       }
       return token;
     },

@@ -88,10 +88,10 @@ const RootLayout: React.FC < { children: React.ReactNode } > = ({ children }) =>
     <html lang="en">
       <body>
         <SessionProvider>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-         </SessionProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </SessionProvider>
          {/* Google Analytics Script */}
         <Script
           strategy="afterInteractive"
