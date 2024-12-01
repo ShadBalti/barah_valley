@@ -6,16 +6,12 @@ if (!MONGODB_URI) {
   throw new Error("Define the MONGODB_URI environment variable");
 }
 
-// Extend NodeJS.Global to include the custom mongoose property with type safety
+// Declare global mongoose property using a module declaration instead of namespace
 declare global {
-  namespace NodeJS {
-    interface Global {
-      mongoose: {
-        conn: Mongoose | null;
-        promise: Promise<Mongoose> | null;
-      };
-    }
-  }
+  var mongoose: {
+    conn: Mongoose | null;
+    promise: Promise<Mongoose> | null;
+  };
 }
 
 let cached = global.mongoose;
