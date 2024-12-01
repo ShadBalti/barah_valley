@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import './globals.css';
 import Script from 'next/script';
+import { SessionProvider } from 'next-auth/react';
 
 export const metadata: Metadata = {
   title: {
@@ -86,9 +87,11 @@ const RootLayout: React.FC < { children: React.ReactNode } > = ({ children }) =>
   return (
     <html lang="en">
       <body>
+        <SessionProvider>
         <Navbar />
         <main>{children}</main>
         <Footer />
+         </SessionProvider>
          {/* Google Analytics Script */}
         <Script
           strategy="afterInteractive"
