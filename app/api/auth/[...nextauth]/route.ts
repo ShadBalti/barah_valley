@@ -1,28 +1,19 @@
-import NextAuth, { NextAuthOptions, Session, User } from "next-auth";
+import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import clientPromise from "../../../../lib/mongodb";
-import UserModel from "../../../../models/User"; // Your Mongoose User model
+import UserModel from "../../../../models/User";
 import bcrypt from "bcrypt";
 
-// Define the JWT type for callbacks
-interface JWT {
-  id?: string;
-  name?: string;
-  email?: string;
-}
-
-// Define authOptions with type safety
-export const authOptions: NextAuthOptions = {
+// Define the NextAuth configuration
+const authOptions = {
   adapter: MongoDBAdapter(clientPromise),
   providers: [
-    // Google OAuth provider
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
-    // Credentials provider for email/password login
     CredentialsProvider({
       name: "Credentials",
       credentials: {
@@ -50,7 +41,7 @@ export const authOptions: NextAuthOptions = {
         }
 
         return {
-          id: user._id.toString(), // Convert ObjectId to string
+          id: user._id.toString(),
           name: user.name,
           email: user.email,
         };
@@ -61,23 +52,22 @@ export const authOptions: NextAuthOptions = {
     strategy: "jwt",
   },
   callbacks: {
-    // Include user ID in the session
-    async session({ session, token }: { session: Session; token: JWT }) {
+    async session({ session, token }: { session: any; token: any }) {
       if (token?.id) {
-        session.user = { ...session.user, id: token.id }; // Attach user ID to session
+        session.user = { ...session.user, id: token.id };
       }
       return session;
     },
-    // Include user ID in the JWT token
-    async jwt({ token, user }: { token: JWT; user?: User }) {
+    async jwt({ token, user }: { token: any; user?: any }) {
       if (user) {
         token.id = user.id;
       }
       return token;
     },
   },
-  secret: process.env.NEXTAUTH_SECRET, // Ensure you have this in your .env
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
+// Export the handler function for GET and POST requests
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
