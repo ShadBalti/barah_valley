@@ -8,10 +8,14 @@ if (!MONGODB_URI) {
 
 // Extend NodeJS.Global to include the custom mongoose property with type safety
 declare global {
-  var mongoose: {
-    conn: Mongoose | null;
-    promise: Promise < Mongoose > | null;
-  };
+  namespace NodeJS {
+    interface Global {
+      mongoose: {
+        conn: Mongoose | null;
+        promise: Promise<Mongoose> | null;
+      };
+    }
+  }
 }
 
 let cached = global.mongoose;
@@ -21,7 +25,7 @@ if (!cached) {
   cached = global.mongoose = { conn: null, promise: null };
 }
 
-async function connectToDatabase(): Promise < Mongoose > {
+async function connectToDatabase(): Promise<Mongoose> {
   // Return the cached connection if it exists
   if (cached.conn) {
     return cached.conn;
