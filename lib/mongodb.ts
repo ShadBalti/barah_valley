@@ -8,7 +8,7 @@ if (!MONGODB_URI) {
 
 // Declare global mongoose property using a module declaration instead of namespace
 declare global {
-  var mongoose: {
+  let mongoose: {
     conn: Mongoose | null;
     promise: Promise<Mongoose> | null;
   };
