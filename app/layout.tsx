@@ -1,6 +1,7 @@
 // app/layout.js
 import React from 'react';
 import type { Metadata } from 'next';
+import Popup from './components/Popup';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import './globals.css';
@@ -87,7 +88,10 @@ const RootLayout: React.FC < { children: React.ReactNode } > = ({ children }) =>
     <html lang="en">
       <body>
         <Navbar />
-        <main>{children}</main>
+        <main>
+        <Popup />
+        {children}
+        </main>
         <Footer />
          {/* Google Analytics Script */}
         <Script
