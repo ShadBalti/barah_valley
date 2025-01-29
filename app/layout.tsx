@@ -84,7 +84,7 @@ export const metadata: Metadata = {
 const GA_TRACKING_ID = 'G-18RPH6R102';
 
 const RootLayout: React.FC < { children: React.ReactNode } > = ({ children }) => {
-  let isOpen = true || 5;
+  const isOpen = 5;
   return (
     <html lang="en">
       <body>
