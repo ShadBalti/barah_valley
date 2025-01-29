@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useMemo } from "react";
-import Image from "next/image";
 
 // Simulated API Data
 const MOCK_WEATHER_API = {
@@ -17,33 +16,7 @@ const MOCK_WEATHER_API = {
   ],
 };
 
-const PERMIT_REQUIREMENTS = [
-  {
-    name: "Trekking Permit",
-    cost: 50,
-    validity: "1 Month",
-    requiredDocuments: ["Passport Copy", "Medical Fitness Certificate", "Travel Insurance"],
-  },
-  {
-    name: "Photography Permit",
-    cost: 75,
-    validity: "2 Weeks",
-    requiredDocuments: ["Professional Camera Details", "Expedition Purpose Letter"],
-  },
-];
-
-type Attraction = {
-  id: number;
-  name: string;
-  description: string;
-  difficulty: string[];
-  bestSeasons: string[];
-  elevation: number;
-  requiredGear: string[];
-  pricingTiers: { type: string;price: number } [];
-};
-
-const ATTRACTIONS: Attraction[] = [
+const ATTRACTIONS = [
   {
     id: 1,
     name: "Barah Alpine Meadows",
@@ -52,31 +25,14 @@ const ATTRACTIONS: Attraction[] = [
     bestSeasons: ["Summer", "Early Autumn"],
     elevation: 4200,
     requiredGear: ["Hiking Boots", "Layered Clothing", "Water Purifier"],
-    pricingTiers: [
-      { type: "Basic Guided Tour", price: 150 },
-      { type: "Photography Expedition", price: 250 },
-      { type: "Extended Camping", price: 350 },
-    ],
   },
 ];
 
 const BarahBroqPage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState < string > ("overview");
-  const [selectedAttraction, setSelectedAttraction] = useState < Attraction | null > (null);
+  const [activeTab, setActiveTab] = useState<string>("overview");
   const [weatherData, setWeatherData] = useState(MOCK_WEATHER_API);
 
-  const [filterDifficulty, setFilterDifficulty] = useState < string[] > ([]);
-  const [filterSeason, setFilterSeason] = useState < string[] > ([]);
-
-  const filteredAttractions = useMemo(() => {
-    return ATTRACTIONS.filter((attraction) => {
-      const difficultyMatch =
-        filterDifficulty.length === 0 || attraction.difficulty.some((diff) => filterDifficulty.includes(diff));
-      const seasonMatch =
-        filterSeason.length === 0 || attraction.bestSeasons.some((season) => filterSeason.includes(season));
-      return difficultyMatch && seasonMatch;
-    });
-  }, [filterDifficulty, filterSeason]);
+  const filteredAttractions = useMemo(() => ATTRACTIONS, []);
 
   useEffect(() => {
     const weatherInterval = setInterval(() => {
@@ -89,17 +45,12 @@ const BarahBroqPage: React.FC = () => {
     return () => clearInterval(weatherInterval);
   }, []);
 
-  const [bookingStage, setBookingStage] = useState < "initial" | "details" | "confirm" > ("initial");
-  const [bookingSelection, setBookingSelection] = useState < Attraction | null > (null);
-
-  const [expandedPermit, setExpandedPermit] = useState < string | null > (null);
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
       <div className="container mx-auto px-4 py-8">
         {/* Navigation */}
         <div className="mb-12 flex justify-center space-x-4 flex-wrap">
-          {["overview", "attractions", "weather", "permits", "booking", "ecology"].map((tab) => (
+          {["overview", "attractions", "weather"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -134,33 +85,6 @@ const BarahBroqPage: React.FC = () => {
           </section>
         )}
 
-        {/* Permits */}
-        {activeTab === "permits" && (
-          <section>
-            {PERMIT_REQUIREMENTS.map((permit) => (
-              <div key={permit.name} className="bg-white rounded-lg shadow-md mb-4">
-                <div
-                  onClick={() => setExpandedPermit(expandedPermit === permit.name ? null : permit.name)}
-                  className="flex justify-between items-center p-6 cursor-pointer"
-                >
-                  <h3 className="font-bold">{permit.name}</h3>
-                  <span>Cost: ${permit.cost}</span>
-                </div>
-                {expandedPermit === permit.name && (
-                  <div className="p-6 bg-blue-50">
-                    <h4 className="font-semibold mb-2">Required Documents:</h4>
-                    <ul className="list-disc pl-5">
-                      {permit.requiredDocuments.map((doc) => (
-                        <li key={doc}>{doc}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            ))}
-          </section>
-        )}
-
         {/* Attractions */}
         {activeTab === "attractions" && (
           <section>
@@ -169,8 +93,6 @@ const BarahBroqPage: React.FC = () => {
                 <div key={attraction.id} className="bg-white rounded-xl p-6 shadow-lg">
                   <h3 className="text-xl font-bold mb-2">{attraction.name}</h3>
                   <p className="text-gray-600 mb-4">{attraction.description}</p>
-                  <h4 className="font-semibold">Difficulty:</h4>
-                  <p>{attraction.difficulty.join(", ")}</p>
                 </div>
               ))}
             </div>
