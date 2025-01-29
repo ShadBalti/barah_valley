@@ -89,7 +89,7 @@ const RootLayout: React.FC < { children: React.ReactNode } > = ({ children }) =>
     <html lang="en">
       <body>
         <Navbar />
-         <Popup open={isOpen} />
+         <Popup duration={isOpen} />
         <main>
        
         {children}
