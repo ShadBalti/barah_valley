@@ -2,12 +2,6 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
-import { 
-  MapPin, Mountain, Tent, Camera, Compass, CloudRain, Wind, 
-  Clock, Star, Navigation, Footprints, Layers, TreePine, 
-  Bird, Binoculars, Campfire, Filter, Calendar, ChevronDown, 
-  ChevronUp, Info, DollarSign, Thermometer, Sunrise, Sunset
-} from 'lucide-react';
 
 // Simulated API Data (would typically come from backend)
 const MOCK_WEATHER_API = {
